@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TrainingDtls {
-	private Long id;
+	private Long trainingId;
 	private String status;
 	private Integer progress;
 	private Float commissionAmount;

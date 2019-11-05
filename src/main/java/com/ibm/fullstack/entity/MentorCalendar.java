@@ -1,5 +1,7 @@
 package com.ibm.fullstack.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,12 +24,12 @@ public class MentorCalendar {
 	@Column(name="calendar_id")
 	private Long calendarId;
 	
-	@Column(name="mentor_id")
-	private Long mentorId;
+	@Column(name="user_name")
+	private String userName;
 	
 	@Column(name = "start_date")
-	private String startDate;
+	private Date startDate;
 	
 	@Column(name = "end_date")
-	private String endDate;
+	private Date endDate;
 }
