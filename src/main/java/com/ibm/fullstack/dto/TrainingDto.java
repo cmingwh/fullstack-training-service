@@ -1,6 +1,7 @@
 package com.ibm.fullstack.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.ibm.fullstack.entity.MentorCalendar;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TrainingDtls {
+public class TrainingDto {
 	private Long trainingId;
 	private String status;
 	private Integer progress;
@@ -24,6 +25,7 @@ public class TrainingDtls {
 	@JsonFormat(pattern = "HH:mm:ss")
 	private String endTime;
 	private Float amountReceived;
+	private MentorCalendar calendar;
 	private Long userId;
 	private String userName;
 	private Long mentorId;
@@ -31,4 +33,6 @@ public class TrainingDtls {
 	private Long skillId;
 	private String skillName;
 	private Float fees;
+	private String comment;
+	private String applyReason;
 }

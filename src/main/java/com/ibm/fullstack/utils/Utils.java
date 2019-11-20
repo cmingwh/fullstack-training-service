@@ -16,6 +16,8 @@ public class Utils {
 		MentorCalendarDto calendarDto = new MentorCalendarDto();
 		calendarDto.setCalendarId(calendar.getCalendarId());
 		calendarDto.setUserName(calendar.getUserName());
+		calendarDto.setStatus(calendar.getStatus());
+		calendarDto.setUser(calendar.getUser());
 		
 		SimpleDateFormat yyyyMMdd = new SimpleDateFormat("yyyy-MM-dd");
 		calendarDto.setStartDate(yyyyMMdd.format(calendar.getStartDate()));
@@ -27,10 +29,10 @@ public class Utils {
 	}
 	
 	public static MentorCalendar convertTOCalendar(MentorCalendarDto calendarDto) {
+		calendarDto.setStartDate(calendarDto.getStartDate().substring(0, 10));
 		MentorCalendar calendar = new MentorCalendar();
 		calendar.setCalendarId(calendarDto.getCalendarId());
 		calendar.setUserName(calendarDto.getUserName());
-		
 		SimpleDateFormat yyyyMMddHHmmss = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		try {
 			calendar.setStartDate(yyyyMMddHHmmss.parse(calendarDto.getStartDate() + " " + calendarDto.getStartTime()));

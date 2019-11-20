@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -32,4 +34,11 @@ public class MentorCalendar {
 	
 	@Column(name = "end_date")
 	private Date endDate;
+	
+	@Column(name = "status")
+	private String status;
+	
+	@ManyToOne
+	@JoinColumn(name="user_name", insertable=false, updatable=false)
+	private User user;
 }

@@ -5,6 +5,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -24,7 +26,7 @@ public class Training {
 	private Long trainingId;
 	
 	@Column(name="status")
-	private String status;
+	private String status = "APPLY";
 	
 	@Column(name="progress")
 	private Integer progress = 0;
@@ -38,14 +40,12 @@ public class Training {
 	@Column(name="rating")
 	private Integer rating = 0;
 	
-	@Column(name = "start_date")
-	private String startDate;
-	
-	@Column(name = "end_date")
-	private String endDate;
-	
 	@Column(name = "amount_received")
 	private Float amountReceived = 0.0f;
+	
+	@ManyToOne
+	@JoinColumn(name="calendar_id", insertable=false, updatable=false)
+	private MentorCalendar calendar;
 	
 	@Column(name = "user_id")
 	private Long userId;
@@ -59,5 +59,10 @@ public class Training {
 	@Column(name = "payment_id")
 	private Long payment_id;
 	
+	@Column(name = "comment")
+	private String comment;
+	
+	@Column(name = "apply_reason")
+	private String applyReason;
 	
 }

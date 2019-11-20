@@ -1,5 +1,7 @@
 package com.ibm.fullstack.dto;
 
+import com.ibm.fullstack.entity.User;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,4 +20,10 @@ public class MentorCalendarDto {
 	private String startTime;
 	
 	private String endTime;
+	
+	private Long skillId;
+	
+	private String status;
+	
+	private User user;
 }

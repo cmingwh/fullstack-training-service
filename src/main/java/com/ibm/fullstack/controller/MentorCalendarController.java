@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.fullstack.dto.MentorCalendarDto;
-import com.ibm.fullstack.entity.MentorCalendar;
 import com.ibm.fullstack.service.MentorCalendarService;
 
 @RestController
@@ -35,12 +34,17 @@ public class MentorCalendarController {
     }
     
     @PostMapping(value = "/save")
-    public MentorCalendar save(@RequestBody MentorCalendarDto calendarDto) {
+    public MentorCalendarDto save(@RequestBody MentorCalendarDto calendarDto) {
 		return calendarService.save(calendarDto);
     }
     
     @DeleteMapping(value = "/{id}")
     public void save(@PathVariable Long id) {
 		calendarService.delete(id);
+    }
+    
+    @PostMapping(value = "/search")
+    public List<MentorCalendarDto> search(@RequestBody MentorCalendarDto calendarDto) {
+		return calendarService.search(calendarDto);
     }
 }
