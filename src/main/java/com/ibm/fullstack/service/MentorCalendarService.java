@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ibm.fullstack.dto.MentorCalendarDto;
 import com.ibm.fullstack.entity.MentorCalendar;
 import com.ibm.fullstack.repository.MentorCalendarRepository;
+import com.ibm.fullstack.utils.Constant;
 import com.ibm.fullstack.utils.Utils;
 
 @Service("userService")
@@ -53,5 +54,14 @@ public class MentorCalendarService {
 		}
 		return result;
 	}
-	
+
+	public void changeStatus(Long calendarId, String calendarStatusApply) {
+		calendarRepository.changeStatus(calendarId, calendarStatusApply);
+	}
+
+	public List<MentorCalendarDto> searchNew(MentorCalendarDto calendarDto) {
+		calendarDto.setStatus(Constant.CALENDAR_STATUS_NEW);
+		return this.search(calendarDto);
+	}
+
 }

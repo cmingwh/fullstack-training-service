@@ -26,9 +26,8 @@ public class TrainingDto {
 	private String endTime;
 	private Float amountReceived;
 	private MentorCalendar calendar;
-	private Long userId;
+	private Long calendarId;
 	private String userName;
-	private Long mentorId;
 	private String mentorName;
 	private Long skillId;
 	private String skillName;

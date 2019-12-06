@@ -45,6 +45,6 @@ public class MentorCalendarController {
     
     @PostMapping(value = "/search")
     public List<MentorCalendarDto> search(@RequestBody MentorCalendarDto calendarDto) {
-		return calendarService.search(calendarDto);
+		return calendarService.searchNew(calendarDto);
     }
 }

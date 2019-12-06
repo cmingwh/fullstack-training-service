@@ -47,14 +47,20 @@ public class Training {
 	@JoinColumn(name="calendar_id", insertable=false, updatable=false)
 	private MentorCalendar calendar;
 	
-	@Column(name = "user_id")
-	private Long userId;
+	@Column(name = "calendar_id")
+	private Long calendarId;
 	
-	@Column(name = "mentor_id")
-	private Long mentorId;
+	@Column(name = "user_name")
+	private String userName;
 	
+	@Column(name = "mentor_name")
+	private String mentorName;
+
 	@Column(name = "skill_id")
 	private Long skillId;
+	
+	@Column(name = "skill_name")
+	private String skillName;
 	
 	@Column(name = "payment_id")
 	private Long payment_id;
